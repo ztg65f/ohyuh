@@ -68,6 +68,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
           fadeAnimation: false,
           fadeDuration: 300,
           gradientSpeed: 8,
+          showDock: false,
         },
         generationSettings: {
           roastPercentage: 50,

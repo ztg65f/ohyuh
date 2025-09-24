@@ -17,6 +17,7 @@ export interface UserAccount {
     fadeAnimation: boolean
     fadeDuration: number
     gradientSpeed: number
+    showDock: boolean
   }
   generationSettings: {
     roastPercentage: number

@@ -255,6 +255,42 @@ export default function Home() {
     document.body.removeChild(link)
   }
 
+  // Dock items
+  const dockItems = [
+    { 
+      icon: <Zap size={18} />, 
+      label: 'Generator', 
+      onClick: () => {
+        const generatorTab = document.querySelector('[value="generator"]')
+        if (generatorTab) generatorTab.click()
+      }
+    },
+    { 
+      icon: <Music size={18} />, 
+      label: 'Audio', 
+      onClick: () => {
+        const audioTab = document.querySelector('[value="audio"]')
+        if (audioTab) audioTab.click()
+      }
+    },
+    { 
+      icon: <ImageIcon size={18} />, 
+      label: 'Gallery', 
+      onClick: () => {
+        const galleryTab = document.querySelector('[value="gallery"]')
+        if (galleryTab) galleryTab.click()
+      }
+    },
+    { 
+      icon: <Settings size={18} />, 
+      label: 'Settings', 
+      onClick: () => {
+        const settingsTab = document.querySelector('[value="settings"]')
+        if (settingsTab) settingsTab.click()
+      }
+    },
+  ]
+
   // Theme configurations
   const themes = {
     Tenacity: {
@@ -813,6 +849,29 @@ export default function Home() {
                   )}
                 </CardContent>
               </Card>
+
+              {/* Dock Settings */}
+              <Card className={`${theme.cardBg} ${theme.cardBorder}`}>
+                <CardHeader>
+                  <CardTitle className={`${theme.textPrimary} flex items-center gap-2`}>
+                    <Settings className="w-5 h-5" />
+                    Dock Settings
+                  </CardTitle>
+                  <CardDescription className={theme.textMuted}>Configure the floating dock</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-0.5">
+                      <Label className={theme.textPrimary}>Show Dock</Label>
+                      <p className={`text-sm ${theme.textMuted}`}>Display floating dock with quick navigation</p>
+                    </div>
+                    <Switch
+                      checked={preferences.showDock}
+                      onCheckedChange={(checked) => setPreferences((prev) => ({ ...prev, showDock: checked }))}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </TabsContent>
         </Tabs>
@@ -826,6 +885,16 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      {/* Dock */}
+      {preferences.showDock && (
+        <Dock 
+          items={dockItems}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
+      )}
     </div>
   )
 }
