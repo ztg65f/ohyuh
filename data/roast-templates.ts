@@ -213,14 +213,23 @@ roast
 
 scenario1
   yo [who] [extra1]
-  that nigga [name] [extra6]
-  that nigga [animename] [extra6]
-  this nigga [extra5]
+  nigga ya [who] [extra1] [extra2]
+  nigga yo [who] [extra3]
+  nigga ya [who] [extra3]
+  my nigga yo [who] [extra6]
+  my nigga thats why yo [who] [extra6]
+  nigga yo [who] [extra5]
+  nigga ya [who] [extra5]
+  nigga thats why yo [who] [extra5]
+  
 
 
 scenario2
   you [extra3]
   you [extra7]
+  that nigga [name] [extra6]
+  that nigga [animename] [extra6]
+  this nigga [extra5]
 
 extra1
   got fucked up by [name] with [bluntweapons] [extra2]
@@ -271,13 +280,14 @@ extra2
   and that bitch [body] exploded
   and that bitch [body] broke
   and that bitch [body] disappeared
-  and taht bitch [body] blew up
+  and that bitch [body] blew up
   and that bitch [body] fell off
   and that bitch [body] slipped off
   and that bitch [organs] blew up
   and that bitch fell into a [location]
   and that bitch clipped through the earth and died
   and that bitch ain't know what to do after
+  and that bitch started playin the drums with its booty cheeks
 
 
 extra3
@@ -2535,3 +2545,4 @@ export function parseRoastData(): RoastData {
 
   return data as RoastData
 }
+
